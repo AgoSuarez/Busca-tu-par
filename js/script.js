@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("puntuaciones", JSON.stringify(PuntuacionesGuardadas));
   }
 
-  function guardaPuntuacion() {
+  function pedirNombre() {
     jugador = prompt("¿Como te llamas?", "");
     if (jugador != "") {
       jugadorPuntos = {
@@ -121,6 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
       InsertaJugador(jugadorPuntos);
 
       muestraTablaPuntuacion();
+    }
+  }
+
+  function guardaPuntuacion() {
+    if (
+      PuntuacionesGuardadas.length < 10 ||
+      score > PuntuacionesGuardadas[9].puntos
+    ) {
+      pedirNombre();
     }
   }
 

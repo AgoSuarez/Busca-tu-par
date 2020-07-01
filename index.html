@@ -14,19 +14,25 @@
         <h1>Busca tu par</h1>
         <h2>Puntuación: <span id="puntos"></span></h2>
     </header>
-    <aside>
-        <h2>TOP 10</h2>
-        <table>
-            <thead>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Puntuacion</th>
-            </thead>
-            <tbody id="body-score">
+    <input type="checkbox" name="ver" id="ver">
+    <label for="ver" id="btnVer" class="verpuntuacion">VER TOP 10</label>
+    <aside id="puntos">
+        <div class="interno">
+            <div class="equis">
+                <label for="ver" class="close">X</label>
+            </div>
+            <h2>TOP 10</h2>
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Puntuacion</th>
+                </thead>
+                <tbody id="body-score">
 
-            </tbody>
-        </table>
-
+                </tbody>
+            </table>
+        </div>
     </aside>
     <div class="tablero" id="tablero">
     </div>
