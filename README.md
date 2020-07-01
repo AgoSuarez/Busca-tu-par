@@ -16,6 +16,7 @@ Si no encontramos una pareja **restaremos 1 punto**, en caso de que encontremos 
 
 Las _10 mejores puntuaciones_ quedan almacenadas en el localStorage.
 
+Puébalo aquí: <a href="https://agosuarez.github.io/Busca-tu-par/" target="_blank">Busca tu par</a> :arrow_left:
 
 ## ✒️ Autor 
 
