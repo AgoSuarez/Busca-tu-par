@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
           Seleccionados = Seleccionados.filter(
             (elemento) => elemento != id && elemento != indice
           );
-        }, 200);
+        }, 300);
       }
       carta1 = "";
       carta2 = "";
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .setAttribute("src", "img/" + cartas[id].imagen);
         setTimeout(() => {
           ComprobarCarta(id);
-        }, 200);
+        }, 250);
       }
     }
   }); //Fin seleccionar Carta
