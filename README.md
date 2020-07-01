@@ -6,7 +6,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/Agosuarez.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/Agosuarez?tab=followers)
 
 <h1 align="center"> 
-        :card::heavy_check_mark:    BUSCA TU PAR   :card::heavy_check_mark: 
+        :heavy_check_mark:    BUSCA TU PAR   :heavy_check_mark: 
 </h1>
 
 ## 🚀 Comenzando 
