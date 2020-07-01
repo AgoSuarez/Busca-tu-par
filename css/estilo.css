@@ -21,6 +21,7 @@ header {
 h1 {
   font-family: "Pangolin", cursive;
   font-size: 64px;
+  margin: 0.5em 0 0 0;
 }
 .reset-contenedor {
   /* border: 1px solid black; */
@@ -66,6 +67,24 @@ img {
 }
 .rojo {
   color: red;
+}
+form {
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Pangolin", cursive;
+  color: rgb(192, 149, 206);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.3em 0.1em;
+  margin-bottom: 0.2em;
+  /* width: 200px; */
+}
+form select {
+  font-family: "Pangolin", cursive;
+  padding: 0.1em;
+  background-color: rgb(172, 90, 199);
+  color: white;
+  /* margin-left: .4em; */
 }
 
 aside {
@@ -165,6 +184,7 @@ table td {
   }
   .verpuntuacion {
     width: 25%;
+  }
 }
 
 @media screen and (max-width: 375px) {

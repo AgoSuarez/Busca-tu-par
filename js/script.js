@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let cartas = [
+  let temas = ["Programacion", "Disney"];
+  document.formTema.tipoCarta.length = temas.length;
+  for (i = 0; i < temas.length; i++) {
+    document.formTema.tipoCarta.options[i].value = temas[i];
+    document.formTema.tipoCarta.options[i].text = temas[i];
+  }
+
+  seleccion = "Programacion";
+  let cartas = [];
+  let Programacion = [
     {
       nombre: "llaves",
       imagen: "brackets.png",
@@ -49,10 +58,56 @@ document.addEventListener("DOMContentLoaded", () => {
       imagen: "puntoycoma.jpg",
     },
   ];
-
-  //Ordena aleatoriamente un array
-  cartas.sort(() => 0.5 - Math.random());
-
+  let Disney = [
+    {
+      nombre: "ariel",
+      imagen: "ariel.png",
+    },
+    {
+      nombre: "ariel",
+      imagen: "ariel.png",
+    },
+    {
+      nombre: "bella",
+      imagen: "bella.png",
+    },
+    {
+      nombre: "bella",
+      imagen: "bella.png",
+    },
+    {
+      nombre: "blancanieves",
+      imagen: "blancanieves.png",
+    },
+    {
+      nombre: "blancanieves",
+      imagen: "blancanieves.png",
+    },
+    {
+      nombre: "cenicienta",
+      imagen: "cenicienta.png",
+    },
+    {
+      nombre: "cenicienta",
+      imagen: "cenicienta.png",
+    },
+    {
+      nombre: "durmiente",
+      imagen: "durmiente.png",
+    },
+    {
+      nombre: "durmiente",
+      imagen: "durmiente.png",
+    },
+    {
+      nombre: "jasmine",
+      imagen: "jasmine.png",
+    },
+    {
+      nombre: "jasmine",
+      imagen: "jasmine.png",
+    },
+  ];
   //Inicializar valores
   const tablero = document.getElementById("tablero");
   const resultado = document.getElementById("puntos");
@@ -175,6 +230,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function reiniciarJuego() {
     console.log("Reiniciando partida!");
+    carta1 = "";
+    carta2 = "";
+    indice = -1;
+    puntuacion = 0;
+    score = 0;
+    Seleccionados = [];
+    resultado.classList.remove("rojo");
     crearTablero();
   } //Fin Reiniciar juego
 
@@ -185,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Seleccionados.push(id);
         document
           .getElementById(id)
-          .setAttribute("src", "img/" + cartas[id].imagen);
+          .setAttribute("src", "img/" + seleccion + "/" + cartas[id].imagen);
         setTimeout(() => {
           ComprobarCarta(id);
         }, 250);
@@ -194,17 +256,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }); //Fin seleccionar Carta
 
   boton.addEventListener("click", () => {
-    carta1 = "";
-    carta2 = "";
-    indice = -1;
-    puntuacion = 0;
-    score = 0;
-    Seleccionados = [];
-    resultado.classList.remove("rojo");
+    // document.getElementById("formTema").reset();
     reiniciarJuego();
   }); //Fin boton Reiniciar
 
+  document.getElementById("formTema").addEventListener("change", () => {
+    console.log(document.formTema.tipoCarta.selectedIndex);
+    seleccion =
+      document.formTema.tipoCarta.options[
+        document.formTema.tipoCarta.selectedIndex
+      ].value;
+    reiniciarJuego();
+  });
+
   function crearTablero() {
+    cartas = eval(seleccion);
+    //Ordena aleatoriamente un array
+    cartas.sort(() => 0.5 - Math.random());
     resultado.textContent = score;
     tablero.innerHTML = "";
     for (i = 0; i < cartas.length; i++) {
