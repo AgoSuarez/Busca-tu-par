@@ -157,11 +157,15 @@ document.addEventListener("DOMContentLoaded", () => {
         score--;
         muestraPuntuacion();
         resultado.textContent = score;
-        Eleccion.setAttribute("src", "img/reverso.jpg");
-        document.getElementById(indice).setAttribute("src", "img/reverso.jpg");
-        Seleccionados = Seleccionados.filter(
-          (elemento) => elemento != id && elemento != indice
-        );
+        setTimeout(() => {
+          Eleccion.setAttribute("src", "img/reverso.jpg");
+          document
+            .getElementById(indice)
+            .setAttribute("src", "img/reverso.jpg");
+          Seleccionados = Seleccionados.filter(
+            (elemento) => elemento != id && elemento != indice
+          );
+        }, 200);
       }
       carta1 = "";
       carta2 = "";
