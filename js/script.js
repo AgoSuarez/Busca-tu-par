@@ -113,7 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function pedirNombre() {
     jugador = prompt("¿Como te llamas?", "");
-    if (jugador != "") {
+    console.log(jugador);
+    if (jugador != "" && jugador !== null) {
       jugadorPuntos = {
         nombre: jugador,
         puntos: score,
